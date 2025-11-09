@@ -28,9 +28,9 @@ Features include:
    On macOS/Linux, use `export` instead of `set`.
 4. **Run** the app:
    ```bash
-   python app.py
+   python lostfound_app.py
    ```
-   Visit http://127.0.0.1:5000
+   Visit http://127.0.0.1:8000
 
 ## Notes
 - Uploaded images are saved in the `uploads/` folder.
