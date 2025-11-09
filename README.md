@@ -1,4 +1,5 @@
 # Lost & Found @ Hightstown (Flask)
+<img width="652" height="286" alt="image" src="https://github.com/user-attachments/assets/fd34e374-694b-468e-a75f-f0735a0ec334" />
 
 A clean, functional lost-and-found website for your school community.
 Features include:
