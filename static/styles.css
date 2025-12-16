@@ -1,0 +1,548 @@
+/* General styles */
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #333;
+    background-color: #f8f9fa; /* Light background for the entire window */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* new stuff */
+    justify-content: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header */
+.header {
+    background-color: #0E3679;
+    color: #fff;
+    padding: 15px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .brand {
+    display: flex; /* To align logo and text horizontally */
+    align-items: center; /* Vertically center them */
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+}
+
+.brand-logo {
+    height: 40px; /* Adjust size as needed */
+    margin-right: 10px; /* Space between logo and text */
+}
+
+.main-nav {
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav .nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.main-nav .nav-link:hover {
+    opacity: 0.8;
+}
+
+/* Main content */
+.main-content {
+    flex: 1; /* Ensures content pushes the footer to the bottom */
+    padding: 40px 0;
+}
+
+/* Enhanced Footer Styles */
+.footer {
+    background-color: #0E3679;
+    color: #fff;
+    padding: 40px 0 20px 0;
+    font-size: 15px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    align-items: start;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.footer-logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.footer-desc {
+    margin-top: 10px;
+    line-height: 1.5;
+    color: #dce3f0;
+}
+
+.footer-links h4,
+.footer-social h4 {
+    margin-bottom: 12px;
+    font-size: 18px;
+    color: #ffffff;
+    border-bottom: 2px solid #2EE7B6;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+.footer-link {
+    display: block;
+    color: #dce3f0;
+    text-decoration: none;
+    margin: 6px 0;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #2EE7B6;
+    transform: translateX(5px);
+}
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.social-icon {
+    background-color: #FFFFFF;
+    color: #0E3679;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    background-color: #0E3679;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 15px;
+    font-size: 14px;
+    color: #dce3f0;
+}
+
+
+/* Cards */
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Slightly more prominent shadow */
+    padding: 30px; 
+    margin-bottom: 20px;
+}
+
+.card h2, .card h3 {
+    margin-top: 0;
+    color: #0E3679;
+}
+
+/* Forms */
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+form input,
+form select,
+form textarea {
+    width: 95%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 18px;
+    font-size: 16px;
+}
+
+form button.btn {
+    background-color: #0E3679;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+form button.btn:hover {
+    background-color: #0a2757;
+}
+
+/* General Buttons */
+.btn {
+    background-color: #0E3679;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0a2757;
+}
+
+.btn.secondary {
+    background-color: #6c757d; /* A neutral gray for secondary actions */
+}
+
+.btn.secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn.warning {
+    background-color: #ffc107; /* Yellow for warnings */
+    color: #333;
+}
+
+.btn.warning:hover {
+    background-color: #e0a800;
+}
+
+.btn.danger {
+    background-color: #dc3545; /* Red for danger */
+}
+
+.btn.danger:hover {
+    background-color: #c82333;
+}
+
+.btn.small {
+    padding: 8px 15px;
+    font-size: 14px;
+}
+
+/* Flash messages */
+.flash {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.flash.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.flash.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Grid layouts */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Always a single column */
+    gap: 20px;
+}
+
+/* Remove media query for grid-container to ensure single column */
+
+
+.grid-2-columns {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .grid-2-columns {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.grid-3-columns {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .grid-3-columns {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Item specific styles */
+.item img {
+    width: 100%;
+    height: 180px; /* Resized height */
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.item-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.item-info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+@media (min-width: 768px) {
+    .item-info-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.item-actions {
+    margin-top: 20px;
+}
+
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.status.approved {
+    background-color: #28a745; /* Green */
+}
+
+.status.pending {
+    background-color: #ffc107; /* Yellow */
+    color: #333;
+}
+
+.status.claimed {
+    background-color: #dc3545; /* Red */
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: #0E3679;
+    color: #fff;
+}
+
+.muted {
+    color: #6c757d;
+    font-size: 14px;
+}
+
+.searchbar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.searchbar input,
+.searchbar select {
+    flex: 1;
+    min-width: 150px; /* Ensure inputs don't get too small */
+}
+
+.searchbar button {
+    flex-shrink: 0;
+}
+
+/* Table styles for admin dashboard */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.data-table th,
+.data-table td {
+    border: 1px solid #eee;
+    padding: 10px;
+    text-align: left;
+}
+
+.data-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #0E3679;
+}
+
+.item-photo {
+    width: 60px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.actions {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.message-cell {
+    white-space: pre-wrap;
+    max-width: 200px; /* Limit width for messages */
+}
+
+/* Hero Section Specific Styles */
+.hero-section {
+    background-color: #fff;
+    padding: 60px 0;
+    text-align: center;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    color: #0E3679;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 18px;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+}
+
+.hero-buttons .btn {
+    margin: 0 10px;
+}
+
+.stats-card {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: #f0f2f5; /* Slightly different background for stats card */
+    box-shadow: none; /* Remove shadow for inner card */
+    border: 1px solid #e0e0e0;
+}
+
+.stats-card h3 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Stat item animations */
+.stat-item {
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer; /* Indicates interactivity */
+}
+
+.stat-item h2 {
+    font-size: 36px;
+    margin: 10px 0 0 0;
+    color: #0E3679;
+}
+
+.stat-item small {
+    color: #777;
+    font-size: 14px;
+}
+
+/* Hover effect */
+.stat-item:hover {
+    transform: translateY(-10px) scale(1.05); /* Lift and slightly enlarge */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+    background-color: #f8f9ff; /* Subtle background change for feedback */
+}
+
+.item-detail-photo {
+    max-width: 250px;   /* Shrink image width — adjust as needed */
+    height: auto;       /* Keeps aspect ratio */
+    border-radius: 8px; /* Matches other cards */
+    display: block;
+    margin: 0 auto;     /* Centers the image */
+    object-fit: cover;  /* Makes image look clean inside its box */
+}
+
+/* On larger screens (tablet & desktop) */
+@media (min-width: 768px) {
+    .item-detail-grid {
+        grid-template-columns: 1fr 2fr; /* Image card smaller, text card larger */
+    }
+}
+.item-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Always side-by-side */
+    gap: 25px;
+    align-items: start;
+}
+
+/* Optional: make it stack only when screen is really narrow */
+@media (max-width: 500px) {
+    .item-detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.icon-img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover .icon-img {
+    transform: scale(1.2);
+}
