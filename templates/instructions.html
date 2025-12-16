@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Step by Step Guide{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h2>Step-by-Step Guide</h2>
+    <p class="muted">Follow these simple steps to use the Lost & Found system effectively.</p>
+
+    <ol class="step-list">
+        <li><strong>Step 1:</strong> If you’ve found an item, go to the <a href="{{ url_for('submit_item') }}">Report Item</a> page.</li>
+        <li><strong>Step 2:</strong> Fill in the details — location, description, date found, and upload a clear photo.</li>
+        <li><strong>Step 3:</strong> Once submitted, the admin will verify and publish the item on the site.</li>
+        <li><strong>Step 4:</strong> If you’ve lost something, browse the <a href="{{ url_for('items') }}">Browse Items</a> section.</li>
+        <li><strong>Step 5:</strong> Found your item? Click the “Claim” button and provide your contact info to request verification.</li>
+        <li><strong>Step 6:</strong> Wait for an admin email with next steps for item pickup.</li>
+    </ol>
+
+    <p class="muted">Tip: Always check the site frequently — new items are added regularly!</p>
+</div>
+{% endblock %}

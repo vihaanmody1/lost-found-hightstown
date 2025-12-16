@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero-section">
+  <div class="hero-content">
+    <h1>Lost something? Found something?</h1>
+    <p>Use this site to report found items, browse the latest items turned in, and submit a claim to prove ownership. Admins review and approve submissions to keep the list accurate.</p>
+    <div class="hero-buttons">
+      <a class="btn" href="{{ url_for('submit_item') }}">Report a Found Item</a>
+      <a class="btn secondary" href="{{ url_for('items') }}">Browse Found Items</a>
+    </div>
+  </div>
+  <div class="card stats-card">
+    <h3>Quick Stats</h3>
+    <div class="grid-3-columns">
+      <div class="card stat-item">
+        <small class="muted">Approved items</small>
+        <h2>{{ stats['approved_count'] or 0 }}</h2>
+      </div>
+      <div class="card stat-item">
+        <small class="muted">Pending review</small>
+        <h2>{{ stats['pending_count'] or 0 }}</h2>
+      </div>
+      <div class="card stat-item">
+        <small class="muted">Claimed items</small>
+        <h2>{{ stats['claimed_count'] or 0 }}</h2>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

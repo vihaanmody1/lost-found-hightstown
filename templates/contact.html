@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h2>Contact Us</h2>
+    <p class="muted">Have a question, suggestion, or need help? Reach out to the Lost & Found team below.</p>
+
+    <form method="post" action="mailto:hhs.lostfound@ewrsd.org" enctype="text/plain">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" placeholder="Your email" required>
+
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" placeholder="Write your message here..." rows="5" required></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+
+</div>
+{% endblock %}
