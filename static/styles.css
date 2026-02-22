@@ -546,3 +546,112 @@ form button.btn:hover {
 .social-icon:hover .icon-img {
     transform: scale(1.2);
 }
+
+/* Hamburger button default (hidden on desktop) */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Tablet & Mobile */
+@media (max-width: 992px) {
+
+    .main-nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #0E3679;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 20px 0;
+        display: none; /* hidden by default */
+    }
+
+    .main-nav.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Floating Accessibility Button */
+.text-toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #0a2757;
+    color: #fff;
+    border: none;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
+
+.text-toggle-btn:hover {
+    background-color: #0a2757;
+    transform: scale(1.1);
+}
+
+/* Larger Text Mode */
+body.large-text {
+    font-size: 120%;
+}
+
+body.large-text h1 { font-size: 2.9em; }
+body.large-text h2 { font-size: 1.5em; }
+body.large-text h3 { font-size: 1.4em; }
+body.large-text p,
+body.large-text a,
+body.large-text li,
+body.large-text small {
+    font-size: 1.2em;
+}
+
+/* Floating Translate Button */
+.translate-btn {
+    position: fixed;
+    bottom: 90px; /* Above your text toggle button */
+    left: 20px;
+    background-color: #0a2757;
+    color: #0E3679;
+    border: none;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
+
+.translate-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Hidden Translate Box */
+.translate-box {
+    position: fixed;
+    bottom: 160px;
+    left: 20px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: none;
+    z-index: 9999;
+}
