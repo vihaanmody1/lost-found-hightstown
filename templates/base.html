@@ -15,18 +15,17 @@
                 <img src="{{ url_for('static', filename='images/hhs_logo.png') }}" alt="Logo" class="brand-logo">
                 <span>Lost & Found @ Hightstown</span>
             </a>
-            <nav class="main-nav">
+
+            
+            <button class="hamburger" id="hamburger">
+                ☰
+            </button>
+
+            <nav class="main-nav" id="mainNav">
                 <a class="nav-link" href="{{ url_for('home') }}">Home</a>
                 <a class="nav-link" href="{{ url_for('about') }}">About Us</a>
                 <a class="nav-link" href="{{ url_for('submit_item') }}">Report Item</a>
                 <a class="nav-link" href="{{ url_for('items') }}">Browse Items</a>
-                <!--
-                {% if session.get('admin') %}
-                    <a class="nav-link" href="{{ url_for('admin_dashboard') }}">Admin</a>
-                    <a class="nav-link" href="{{ url_for('admin_logout') }}">Logout</a>
-                {% else %}
-                    <a class="nav-link" href="{{ url_for('admin_login') }}">Admin</a>
-                {% endif %} -->
                 <a class="nav-link" href="{{ url_for('contact') }}">Contact Us</a>
             </nav>
         </div>
@@ -89,6 +88,51 @@
 </footer>
 
 
-    
+<script>
+    const hamburger = document.getElementById("hamburger");
+    const nav = document.getElementById("mainNav");
+
+    hamburger.addEventListener("click", () => {
+        nav.classList.toggle("active");
+    });
+</script> 
+<button id="textToggle" class="text-toggle-btn" title="Toggle Larger Text">
+    A+
+</button>
+<script>
+    const textToggle = document.getElementById("textToggle");
+
+    textToggle.addEventListener("click", () => {
+        document.body.classList.toggle("large-text");
+    });
+</script>  
+<!-- Language Toggle Button -->
+<button id="translateToggle" class="translate-btn" title="Translate Page">
+    🌎
+</button>
+
+<!-- Hidden Google Translate Container -->
+<div id="google_translate_element" class="translate-box"></div>
+<script>
+    const translateToggle = document.getElementById("translateToggle");
+    const translateBox = document.getElementById("google_translate_element");
+
+    translateToggle.addEventListener("click", () => {
+        translateBox.style.display =
+            translateBox.style.display === "block" ? "none" : "block";
+    });
+
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+            {
+                pageLanguage: 'en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            },
+            'google_translate_element'
+        );
+    }
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
