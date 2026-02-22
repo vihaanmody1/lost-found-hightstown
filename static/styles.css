@@ -2,13 +2,11 @@
 body {
     font-family: 'Source Sans Pro', sans-serif;
     color: #333;
-    background-color: #f8f9fa; /* Light background for the entire window */
+    background-color: #f8f9fa;
     margin: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    /* new stuff */
-    justify-content: center;
 }
 
 .container {
@@ -437,18 +435,28 @@ form button.btn:hover {
     max-width: 200px; /* Limit width for messages */
 }
 
-/* Hero Section Specific Styles */
+/* HERO SECTION (UPDATED SPLIT LAYOUT) */
 .hero-section {
     background-color: #fff;
-    padding: 60px 0;
-    text-align: center;
-    margin-bottom: 40px;
+    padding: 80px 60px;
+    margin-bottom: 80px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px;
 }
 
 .hero-section h1 {
-    font-size: 48px;
+    font-size: 56px;
     color: #0E3679;
     margin-bottom: 20px;
 }
@@ -456,26 +464,21 @@ form button.btn:hover {
 .hero-section p {
     font-size: 18px;
     color: #555;
-    max-width: 800px;
-    margin: 0 auto 30px auto;
     line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 600px;
 }
 
 .hero-buttons .btn {
-    margin: 0 10px;
+    margin-right: 15px;
 }
 
 .stats-card {
-    margin-top: 40px;
-    padding: 30px;
-    background-color: #f0f2f5; /* Slightly different background for stats card */
-    box-shadow: none; /* Remove shadow for inner card */
+    flex: 1;
+    min-width: 300px;
+    background-color: #f0f2f5;
     border: 1px solid #e0e0e0;
-}
-
-.stats-card h3 {
-    text-align: center;
-    margin-bottom: 25px;
+    box-shadow: none;
 }
 
 /* Stat item animations */
@@ -654,4 +657,86 @@ body.large-text small {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     display: none;
     z-index: 9999;
+}
+
+/* GENERAL SECTION SPACING */
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 42px;
+    color: #0E3679;
+    margin-bottom: 60px;
+}
+
+/* 4-COLUMN GRID (if you don't already have it) */
+.grid-4-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+/* PROCESS SECTION */
+.process-step {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+}
+
+.process-step:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+.process-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    background-color: #0E3679;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* FEATURE CARD HOVER EFFECT */
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+
+/* CTA SECTION */
+.cta-section {
+    background-color: #0E3679;
+    color: white;
+    padding: 80px 60px;
+    border-radius: 8px;
+    margin-top: 80px;
+}
+
+.cta-section .section-title {
+    color: white;
+}
+
+.cta-section .card {
+    background: white;
+    color: #333;
+}
+
+/* WHY SYSTEM WORKS HOVER */
+.card.section .grid-2-columns .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.section .grid-2-columns .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
 }
