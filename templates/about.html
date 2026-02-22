@@ -2,111 +2,126 @@
 {% block title %}About Us{% endblock %}
 
 {% block content %}
-<div class="card">
-    <h2>About Us</h2>
-    <p class="muted">Learn more about the Lost & Found service at Hightstown High School.</p>
-</div>
 
-<!-- Hero/Image Section -->
-<div class="hero-section">
-    <img src="{{ url_for('static', filename='images/background.jpg') }}" alt="Hightstown High School" style="max-width: 1000px; height: auto; margin-bottom: 20px;">
-    <h1>Lost & Found @ Hightstown</h1>
-    <p>Reconnecting students with their belongings since 2026</p>
-</div>
+<!-- HERO SECTION (Matches Home Page Style) -->
+<section class="hero-section">
+    <div class="hero-content">
+        <h1>About Lost & Found @ Hightstown</h1>
+        <p>
+            Reconnecting students with their belongings quickly, safely, and efficiently.
+            Our mission is to make lost item recovery simple and transparent for the entire school community.
+        </p>
 
-<!-- Description Section -->
-<div class="card">
-    <h3>What We Do</h3>
-    <p>
-        Welcome to the <strong>Lost & Found @ Hightstown</strong> website! We are a dedicated service for students 
-        of Hightstown High School to help reunite lost items with their owners. Whether you've lost something 
-        in the classroom, cafeteria, gym, or anywhere on campus, our platform makes it easy to report and 
-        find lost belongings.
-    </p>
-    <p>
-        Our mission is to provide a simple, efficient, and transparent way for students to reclaim their 
-        lost items. By reporting found items and checking our database, you can help reduce lost property 
-        and ensure that valuable items find their way back to you.
-    </p>
-    <p>
-        This service is operated by Vihaan Mody & Shourya Pendgaonkar and is free for all Hightstown High School 
-        students to use. Together, we can create a more connected and caring school community!
-    </p>
-</div>
-
-<!-- Open Hours / Address Section -->
-<div class="card">
-    <h3>📍 Location & Hours</h3>
-    <div class="grid-2-columns">
-        <div>
-            <p><strong>Address:</strong></p>
-            <p>Hightstown High School<br>
-            25 Leshin Ln<br>
-            Hightstown, NJ 08520</p>
+        <div class="hero-buttons">
+            <a href="{{ url_for('items') }}" class="btn">Browse Found Items</a>
+            <a href="{{ url_for('submit_item') }}" class="btn secondary">Report a Found Item</a>
         </div>
-        <div>
-            <p><strong>Office Hours:</strong></p>
-            <p>Monday - Friday: 7:30 AM - 2:10 PM<br>
-            Saturday - Sunday: Closed</p>
-            <p class="muted">Items can be picked up during school hours. Please bring your student ID for verification.</p>
+    </div>
+</section>
+
+<!-- WHAT WE DO -->
+<div class="card">
+    <h2 style="text-align:center; margin-bottom: 30px;">What We Do</h2>
+
+    <div class="grid-3-columns">
+        <div class="stat-item">
+            <h3>Report Items</h3>
+            <p class="muted">
+                Students can quickly report found items so they can be returned to their rightful owners.
+            </p>
+        </div>
+
+        <div class="stat-item">
+            <h3>Browse Listings</h3>
+            <p class="muted">
+                Search through approved items and submit a claim to verify ownership.
+            </p>
+        </div>
+
+        <div class="stat-item">
+            <h3>Admin Review</h3>
+            <p class="muted">
+                All submissions are reviewed to ensure accuracy and fairness.
+            </p>
         </div>
     </div>
 </div>
 
-<!-- Questions / Phone Number Section -->
+
+<!-- LOCATION & HOURS -->
 <div class="card">
-    <h3>📞 Questions? Contact Us</h3>
-    <p>If you have any questions about a lost item, need assistance, or want to report a found item, please reach out to us:</p>
+    <h2 style="text-align:center; margin-bottom: 30px;">Location & Hours</h2>
+
     <div class="grid-2-columns">
-        <div>
-            <p><strong>Phone:</strong></p>
-            <p><a href="tel:6094437750">(609) 443-7750</a></p>
-            <p class="muted">Main office - Ask for the Lost & Found department</p>
+        <div class="stat-item">
+            <small class="muted">Address</small>
+            <h3>Hightstown High School</h3>
+            <p class="muted">
+                25 Leshin Ln<br>
+                Hightstown, NJ 08520
+            </p>
         </div>
-        <div>
-            <p><strong>Email:</strong></p>
-            <p><a href="http://127.0.0.1:8000/">hhs.lostfound@ewrsd.org</a></p>
-            <p class="muted">We respond within 24-48 hours</p>
+
+        <div class="stat-item">
+            <small class="muted">Office Hours</small>
+            <h3>7:30 AM – 2:10 PM</h3>
+            <p class="muted">
+                Monday – Friday<br>
+                Closed on weekends
+            </p>
         </div>
     </div>
-    <div style="margin-top: 20px;">
+
+    <p class="muted" style="text-align:center; margin-top: 25px;">
+        Please bring your student ID when picking up items.
+    </p>
+</div>
+
+
+<!-- CONTACT SECTION -->
+<div class="card">
+    <h2 style="text-align:center; margin-bottom: 30px;">Questions or Need Help?</h2>
+
+    <div class="grid-2-columns">
+        <div class="stat-item">
+            <small class="muted">Phone</small>
+            <h3><a href="tel:6094437750">(609) 443-7750</a></h3>
+            <p class="muted">Main Office – Ask for Lost & Found</p>
+        </div>
+
+        <div class="stat-item">
+            <small class="muted">Email</small>
+            <h3>
+                <a href="mailto:hhs.lostfound@ewrsd.org">
+                    hhs.lostfound@ewrsd.org
+                </a>
+            </h3>
+            <p class="muted">We respond within 24–48 hours</p>
+        </div>
+    </div>
+
+    <div style="margin-top: 30px; text-align:center;">
         <a href="{{ url_for('contact') }}" class="btn">Contact Us</a>
     </div>
 </div>
 
-<!-- Need Professional Advice Section -->
+<!-- QUICK FACTS (Clean Grid Instead of Bullet Dump) -->
 <div class="card">
-    <h3>🧠 Need Professional Advice?</h3>
-    <p>
-        If you're experiencing personal issues or need professional support, Hightstown High School 
-        offers counseling services to help students navigate challenges.
-    </p>
-    <div class="grid-2-columns">
-        <div>
-            <p><strong>School Counseling Office:</strong></p>
-            <p>Phone: (609) 443-7750 ext. 2005</p>
-            <p>Email: counseling@ewrsd.org</p>
+    <h2>Quick Facts</h2>
+    <div class="grid-3-columns">
+        <div class="stat-item">
+            <small class="muted">Holding Period</small>
+            <h3>30 Days</h3>
         </div>
-        <div>
-            <p><strong>Hours:</strong></p>
-            <p>Monday - Friday: 7:30 AM - 3:30 PM</p>
-            <p>Located in the main office area</p>
+        <div class="stat-item">
+            <small class="muted">Valuable Items</small>
+            <h3>Main Office</h3>
+        </div>
+        <div class="stat-item">
+            <small class="muted">Review Process</small>
+            <h3>Admin Approved</h3>
         </div>
     </div>
-    <p class="muted" style="margin-top: 15px;">
-        <em>Remember: It's okay to ask for help. The counseling team is here to support you with any concerns 
-        related to academics, personal issues, or college/career planning.</em>
-    </p>
 </div>
 
-<!-- Additional Info Section -->
-<div class="card">
-    <h3>📋 Quick Facts</h3>
-    <ul>
-        <li>All items are held for 30 days before being disposed of or donated</li>
-        <li>Please claim your items as soon as possible to avoid loss</li>
-        <li>Valuable items (electronics, wallets, etc.) are turned over to the main office</li>
-        <li>Always check the Browse Items page regularly for new found items</li>
-    </ul>
-</div>
 {% endblock %}
