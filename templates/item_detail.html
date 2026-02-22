@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="item-detail-grid">
+  <div class="card">
+    {% if item['photo_filename'] %}
+      <img alt="Item photo" loading="lazy" src="{{ url_for('uploaded_file', filename=item['photo_filename']) }}" class="item-detail-photo">
+    {% endif %}
+  </div>
+  <div class="card">
+    <h2>{{ item['title'] }}</h2>
+    <div class="item-meta">
+      <span class="status {{ item['status'] }}">{{ item['status']|capitalize }}</span>
+      {% if item['category'] %}<span class="badge">{{ item['category'] }}</span>{% endif %}
+    </div>
+    {% if item['description'] %}
+      <p>{{ item['description'] }}</p>
+    {% endif %}
+    <div class="item-info-grid">
+      {% if item['location_found'] %}<div><small class="muted">Found at</small><div><strong>{{ item['location_found'] }}</strong></div></div>{% endif %}
+      {% if item['date_found'] %}<div><small class="muted">Date found</small><div><strong>{{ item['date_found'] }}</strong></div></div>{% endif %}
+    </div>
+    <div class="item-actions">
+      <a class="btn" href="{{ url_for('claim_item', item_id=item['id']) }}">Claim / Ask About This Item</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

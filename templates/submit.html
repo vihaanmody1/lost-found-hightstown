@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h2>Report a Found Item</h2>
+  <form method="post" enctype="multipart/form-data">
+    <div class="grid-2-columns">
+      <div>
+        <label for="title">Item Name *</label>
+        <input id="title" name="title" placeholder="e.g., Blue hoodie" required>
+      </div>
+      <div>
+        <label for="category">Category *</label>
+        <select id="category" name="category" required>
+          <option value="">Select a category</option>
+          <option>Clothing</option>
+          <option>Electronics</option>
+          <option>Accessories</option>
+          <option>School Supplies</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+    <label for="description">Description</label>
+    <textarea id="description" name="description" rows="4" placeholder="Brand, color, distinguishing marks..."></textarea>
+
+    <div class="grid-2-columns">
+      <div>
+        <label for="location_found">Location Found *</label>
+        <input id="location_found" name="location_found" placeholder="e.g., Gym bleachers" required>
+      </div>
+      <div>
+        <label for="date_found">Date Found *</label>
+        <input id="date_found" name="date_found" type="date" required>
+      </div>
+    </div>
+
+    <label for="photo">Photo (png/jpg/gif/webp, max 8MB) *</label>
+    <input id="photo" name="photo" type="file" accept=".png,.jpg,.jpeg,.gif,.webp" required>
+
+    <div>
+      <button class="btn" type="submit">Submit Item</button>
+    </div>
+  </form>
+</div>
+{% endblock %}
