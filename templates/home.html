@@ -1,30 +1,156 @@
 {% extends "base.html" %}
 {% block content %}
+
+<!-- HERO SECTION -->
 <section class="hero-section">
   <div class="hero-content">
     <h1>Lost something? Found something?</h1>
-    <p>Use this site to report found items, browse the latest items turned in, and submit a claim to prove ownership. Admins review and approve submissions to keep the list accurate.</p>
+    <p>
+      Report found items, browse what’s been turned in, and submit a claim to prove ownership.
+      All submissions are reviewed by administrators to ensure accuracy and prevent misuse.
+    </p>
     <div class="hero-buttons">
       <a class="btn" href="{{ url_for('submit_item') }}">Report a Found Item</a>
       <a class="btn secondary" href="{{ url_for('items') }}">Browse Found Items</a>
     </div>
   </div>
+
   <div class="card stats-card">
     <h3>Quick Stats</h3>
     <div class="grid-3-columns">
       <div class="card stat-item">
-        <small class="muted">Approved items</small>
+        <small class="muted">Approved Items</small>
         <h2>{{ stats['approved_count'] or 0 }}</h2>
       </div>
       <div class="card stat-item">
-        <small class="muted">Pending review</small>
-        <h2>{{ stats['pending_count'] or 0 }}</h2>
+        <small class="muted">Review Pending</small>
+        <h2>{{ stats['review_count'] or 0 }}</h2>
       </div>
       <div class="card stat-item">
-        <small class="muted">Claimed items</small>
+        <small class="muted">Claimed Items</small>
         <h2>{{ stats['claimed_count'] or 0 }}</h2>
       </div>
     </div>
   </div>
 </section>
+
+
+<!-- WHAT YOU CAN DO -->
+<div class="card section">
+  <div class="container">
+    <h2 class="section-title">What You Can Do Here</h2>
+
+    <div class="grid-3-columns">
+      <div class="card feature-card">
+        <h3>Report Found Items</h3>
+        <p>
+          Quickly submit details about items you’ve found so they can be reviewed and added to the public list.
+        </p>
+      </div>
+
+      <div class="card feature-card">
+        <h3>Search for Your Lost Item</h3>
+        <p>
+          Browse recently approved items and filter through descriptions to see if yours has been turned in.
+        </p>
+      </div>
+
+      <div class="card feature-card">
+        <h3>Submit a Claim</h3>
+        <p>
+          Provide identifying details to prove ownership. Administrators verify claims before marking items as returned.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- HOW IT WORKS -->
+<div class="card section">
+  <div class="container">
+    <h2 class="section-title">How It Works</h2>
+
+    <div class="grid-4-columns process-grid">
+
+      <div class="process-step">
+        <div class="process-icon">1</div>
+        <h3>Item is Found</h3>
+        <p class="muted">
+          A student or staff member turns in a lost item.
+        </p>
+      </div>
+
+      <div class="process-step">
+        <div class="process-icon">2</div>
+        <h3>Admin Review</h3>
+        <p class="muted">
+          The submission is reviewed to ensure accuracy.
+        </p>
+      </div>
+
+      <div class="process-step">
+        <div class="process-icon">3</div>
+        <h3>Item is Posted</h3>
+        <p class="muted">
+          Approved items appear on the browse page.
+        </p>
+      </div>
+
+      <div class="process-step">
+        <div class="process-icon">4</div>
+        <h3>Claim & Verify</h3>
+        <p class="muted">
+          The owner submits proof and the item is marked as claimed.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- WHY THIS SYSTEM WORKS -->
+<div class="card section">
+  <div class="container">
+    <h2 class="section-title">Why This System Works</h2>
+
+    <div class="grid-2-columns">
+      <div class="card">
+        <h3>Admin Approval</h3>
+        <p>
+          Every submission is reviewed before going public to prevent spam or incorrect listings.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Ownership Verification</h3>
+        <p>
+          Claimants must provide identifying details before an item is officially marked as returned.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GET STARTED -->
+<section class="section cta-section">
+  <div class="container">
+    <h2 class="section-title">Get Started</h2>
+
+    <div class="grid-2-columns">
+      <div class="card text-center">
+        <h3>Found Something?</h3>
+        <p>Help someone recover their belongings by submitting a found item.</p>
+        <a class="btn" href="{{ url_for('submit_item') }}">Report Item</a>
+      </div>
+
+      <div class="card text-center">
+        <h3>Looking for Something?</h3>
+        <p>Browse the list of approved items and submit a claim if you recognize yours.</p>
+        <a class="btn secondary" href="{{ url_for('items') }}">Browse Items</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 {% endblock %}
