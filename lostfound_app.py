@@ -37,7 +37,7 @@ def init_db():
             location_found TEXT,
             date_found TEXT,
             photo_filename TEXT,
-            status TEXT DEFAULT 'pending',
+            status TEXT DEFAULT 'review',
             created_at TEXT DEFAULT CURRENT_TIMESTAMP
         );
     """)
@@ -70,7 +70,7 @@ def home():
         SELECT
           SUM(CASE WHEN status='approved' THEN 1 ELSE 0 END) AS approved_count,
           SUM(CASE WHEN status='claimed' THEN 1 ELSE 0 END) AS claimed_count,
-          SUM(CASE WHEN status='pending' THEN 1 ELSE 0 END) AS pending_count
+          SUM(CASE WHEN status='review' THEN 1 ELSE 0 END) AS review_count
         FROM items;
     """).fetchone()
     con.close()
@@ -105,11 +105,11 @@ def submit_item():
         con = get_db()
         con.execute("""
             INSERT INTO items (title, description, category, location_found, date_found, photo_filename, status)
-            VALUES (?, ?, ?, ?, ?, ?, 'pending')
+            VALUES (?, ?, ?, ?, ?, ?, 'review')
         """, (title, description, category, location_found, date_found, photo_filename))
         con.commit()
         con.close()
-        flash("Thank you for reporting — your submission is pending review.", "success")
+        flash("Thank you for reporting — your submission is review review.", "success")
         return redirect(url_for("home"))
     return render_template("submit.html")
 
@@ -215,7 +215,7 @@ def admin_dashboard():
 def admin_item_status(item_id, new_status):
     if not is_admin():
         return redirect(url_for("admin_login"))
-    if new_status not in ("pending", "approved", "claimed"):
+    if new_status not in ("review", "approved", "claimed"):
         abort(400)
     con = get_db()
     con.execute("UPDATE items SET status = ? WHERE id = ?", (new_status, item_id))
