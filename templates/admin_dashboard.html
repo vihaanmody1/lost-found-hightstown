@@ -30,8 +30,8 @@
             <form method="post" action="{{ url_for('admin_item_status', item_id=it['id'], new_status='approved') }}">
               <button class="btn" type="submit">Approve</button>
             </form>
-            <form method="post" action="{{ url_for('admin_item_status', item_id=it['id'], new_status='pending') }}">
-              <button class="btn secondary" type="submit">Pending</button>
+            <form method="post" action="{{ url_for('admin_item_status', item_id=it['id'], new_status='review') }}">
+              <button class="btn secondary" type="submit">Review</button>
             </form>
             <form method="post" action="{{ url_for('admin_item_status', item_id=it['id'], new_status='claimed') }}">
               <button class="btn warning" type="submit">Mark Claimed</button>
